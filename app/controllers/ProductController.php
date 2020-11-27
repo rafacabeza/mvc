@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use \App\Models\Product;
+
 class ProductController  
 {
     public function __construct()
@@ -9,6 +11,8 @@ class ProductController
     }
     public function index()
     {
-        echo "En método index<br>";
+        $products = Product::all();
+        
+        include('../views/product/index.php');
     }
 }

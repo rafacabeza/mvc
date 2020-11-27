@@ -4,7 +4,7 @@ namespace App\Models;
 use PDO;
 use PDOException;
 
-class ProductType
+class Product
 {
     public function __construct()
     {
@@ -13,20 +13,20 @@ class ProductType
 
     public static function all()
     {
-        $db = ProductType::db();
-        $statement = $db->query('SELECT * FROM product_types');
-        $producttypes = $statement->fetchAll(PDO::FETCH_CLASS, ProductType::class);
+        $db = Product::db();
+        $statement = $db->query('SELECT * FROM products');
+        $products = $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
 
-        return $producttypes;        
+        return $products;        
     }
 
     public static function find($id)
     {
-        $db = ProductType::db();
+        $db = Product::db();
 
-        $statement = $db->prepare('SELECT * FROM producttypes WHERE id=:id');
+        $statement = $db->prepare('SELECT * FROM products WHERE id=:id');
         $statement->execute(array(':id' => $id));        
-        $statement->setFetchMode(PDO::FETCH_CLASS, ProductType::class);
+        $statement->setFetchMode(PDO::FETCH_CLASS, Product::class);
         $producttype = $statement->fetch(PDO::FETCH_CLASS);
         return $producttype;
     }

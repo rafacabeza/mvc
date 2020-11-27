@@ -11,5 +11,7 @@ class ProducttypeController
     public function index()
     {
         $producttypes = ProductType::all();
+        
+        include('../views/producttype/index.php');
     }
 }
