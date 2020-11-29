@@ -31,6 +31,19 @@ class Product
         return $producttype;
     }
 
+    public function insert()
+    {
+        $db = Product::db();
+
+        $statement = $db->prepare('INSERT INTO products(`name`, `type_id`, `price`) VALUES(:name, :type_id, :price)');
+        $data = [
+            ':name' => $this->name,
+            ':type_id' => $this->type_id,
+            ':price' => $this->price
+        ];
+        return $statement->execute($data);
+    }
+
     protected static function db()
     {
         $dsn = 'mysql:dbname=mvc;host=db';

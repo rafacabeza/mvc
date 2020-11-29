@@ -2,16 +2,16 @@
 <?php include('../views/parts/header.php'); ?>
 <!-- Begin page content -->
 <main role="main" class="container">
-  <h1>Lista de usuarios  
+  <h1>Lista de productos  
       <a class="btn btn-primary float-right" href="/product/create">Nuevo</a>
   </h1>
   <table class="table table-striped">
         <thead>
             <tr>
             <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>F. Nacimiento</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th></th>
             <th></th>
             <th></th>
             </tr>
