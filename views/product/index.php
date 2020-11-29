@@ -21,7 +21,8 @@
                 <tr>
                 <td><?= $product->name ?></td>
                 <td><?= $product->type_id ?></td>
-                <td><?= $product->price ?></td>
+                <td><?= number_format($product->price, 2, ",", ".") ?></td>
+
                 <td><a class="btn btn-primary btn-sm" href="/product/show/<?= $product->id ?>">  Ver </a></td>
                 <td><a class="btn btn-primary btn-sm" href="/product/edit/<?= $product->id ?>">  Editar </a></td>
                 <td><a class="btn btn-primary btn-sm" href="/product/delete/<?= $product->id ?>">  Borrar </a></td>

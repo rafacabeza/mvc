@@ -24,7 +24,7 @@ class ProductType
     {
         $db = ProductType::db();
 
-        $statement = $db->prepare('SELECT * FROM producttypes WHERE id=:id');
+        $statement = $db->prepare('SELECT * FROM product_types WHERE id=:id');
         $statement->execute(array(':id' => $id));        
         $statement->setFetchMode(PDO::FETCH_CLASS, ProductType::class);
         $producttype = $statement->fetch(PDO::FETCH_CLASS);
