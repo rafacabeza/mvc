@@ -20,10 +20,15 @@
               <a class="nav-link " href="/product">Productos</a>
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+
+          <?php
+          if (isset($_SESSION['user'])) {
+            echo "<span class='bg-success'>" . $_SESSION['user']->name . "</span> &nbsp;";
+            echo "<a class='nav-item active' href='/login/cerrar'>cerrar</a>";
+          } else {
+            echo "<a  class='nav-item active' href='/login'>entrar</a>";
+          }
+          ?>
         </div>
       </nav>
     </header>

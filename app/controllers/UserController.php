@@ -9,10 +9,19 @@ class UserController
     public function __construct()
     {
         // echo "en UserController<br>";
+        if (!isset($_SESSION['user'])) {
+            header('Location: /login');
+            return;
+        }
     }
 
     public function index()
     {
+        //comprobación a nivel de método
+        // if (!isset($_SESSION['user'])) {
+        //     header('Location: /login');
+        //     return;
+        // }
         // echo "En método index<br>";
 
         //buscar la lista de usuarios
