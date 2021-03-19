@@ -29,4 +29,7 @@ Probar en el navegador mvc.local
 ### EJERCICIO
 - Crear el UsuarioController
 - Añadir método "crear()". Inicialmente sólo debe "saludar"
-- 
+- Mostrar los resultados en "mostrar()"
+- Probar input text
+- Probar select
+- Probar array de "checkbox"

@@ -11,4 +11,8 @@ class ProductController
     {
         echo "En método index<br>";
     }
+    public function nueva()
+    {
+        echo "En método 'nueva'";
+    }
 }
