@@ -29,4 +29,23 @@ class UsuarioController
         include "../views/usuario/mostrar.php";
 
     }
+
+    public function deseos()
+    {
+        //lista de deseos usando formulario sólamente
+        //nuevo deseo: input nuevodeseo
+        $deseo = $_POST['nuevodeseo'];
+        $lista = $_POST['lista'];
+        
+        
+        if (!isset($lista)) {
+            $lista = [];
+        }
+
+        if (isset($deseo)) {
+            $lista[] = $deseo;
+        }
+       
+        include('../views/usuario/deseos.php');
+    }
 }
