@@ -33,3 +33,20 @@ Probar en el navegador mvc.local
 - Probar input text
 - Probar select
 - Probar array de "checkbox"
+
+
+## Acceso a BBDD
+
+- Vamos a tomar User y UserController como referencia para completar el CRUD de productos (Product y ProductController).
+
+- Clase repaso 03:
+    - Index. Listado de productos. Requiere el método all() del modelo.
+    - Show. Detalle de producto. Requiere el método find() del modelo.
+    - Delete. Borrado de producto y mensaje usando sesión. Requiere el método delete() del modelo.
+
+    
+- Para casa.
+    - Hacer lo mismo con la tabla productypes.
+    - Recomendable crear una o más tablas propias para practicar y hacer los tres métodos citados.
+
+- Clase repaso 04 próximo lunes: create y update
