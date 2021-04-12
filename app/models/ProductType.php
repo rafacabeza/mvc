@@ -14,8 +14,8 @@ class ProductType
     public static function all()
     {
         $db = ProductType::db();
-        $statement = $db->query('SELECT * FROM producttypes');
-        $producttypes = $statement->fetchAll(PDO::FETCH_CLASS, User::class);
+        $statement = $db->query('SELECT * FROM product_types');
+        $producttypes = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
 
         return $producttypes;        
     }

@@ -2,7 +2,9 @@
 namespace App\Controllers;
 
 require_once('../app/models/Product.php');
+require_once('../app/models/ProductType.php');
 use \App\Models\Product;
+use App\Models\ProductType;
 
 class ProductController  
 {
@@ -40,5 +42,61 @@ class ProductController
     public function nueva()
     {
         echo "En método 'nueva'";
+    }
+
+    public function create()
+    {
+        //necesito la lista de tipos para el select:
+        $types = ProductType::all();
+        // echo "<pre>";
+        // var_dump($types);
+        // exit();
+
+        include '../views/product/create.php';
+    }
+
+    public function store()
+    {
+        //crear objeto
+        $product = new Product;
+        //asignarle valores de $_POST
+        $product->name = $_POST['name'];
+        $product->type_id = $_POST['type_id'];
+        $product->price = $_POST['price'];
+        //guardar el objeto en BBDD
+        $product->insert();
+        //reenviar al index o al show
+        // echo "<pre>";
+        // var_dump($product);
+        
+        header("Location: /product/show/$product->id");
+    }
+
+    public function edit($arguments)
+    {
+        //mezcla de show y de create:
+        $id = $arguments[0];
+        $product = Product::find($id);
+        $types = ProductType::all();
+
+        include('../views/product/edit.php');
+    }
+
+    public function update($arguments)
+    {
+        //buscar el producto
+        $id = $arguments[0];
+        $product = Product::find($id);
+        
+        //tomar los datos del formulario y modificar el objeto
+        $product->name = $_POST['name'];
+        $product->type_id = $_POST['type_id'];
+        $product->price = $_POST['price'];
+
+        //guardar en la bbdd
+        $product->save();
+
+        //reenviar al show o al index
+        header('Location: /product/show/' . $product->id);
     }
 }

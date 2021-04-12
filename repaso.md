@@ -49,4 +49,8 @@ Probar en el navegador mvc.local
     - Hacer lo mismo con la tabla productypes.
     - Recomendable crear una o más tablas propias para practicar y hacer los tres métodos citados.
 
-- Clase repaso 04 próximo lunes: create y update
+- Clase repaso 04: create y update 
+
+    - Hemos hecho create+store y edit+update de Product
+    - Hacer en casa lo mismo con ProductType
+    - Recomiendo hacer una o más tablas propias para practicar.

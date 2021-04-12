@@ -43,4 +43,30 @@ class Product extends Model
         return $statement->execute([':id' => $this->id]);        
     }
 
+    public function insert()
+    {
+        $db = self::db();
+        $statement = $db->prepare('INSERT INTO products(`name`, `type_id`, `price`) VALUES(:name, :type_id, :price)');
+        $data = [
+            ':name' => $this->name,
+            ':type_id' => $this->type_id,
+            ':price' => $this->price
+        ];
+        $statement->execute($data);
+        $this->id = $db->lastInsertId();
+        return;
+    }
+
+    public function save()
+    {
+        $db = self::db();
+        $statement = $db->prepare('UPDATE products SET `name`=:name, `type_id`=:type_id, `price`=:price WHERE id=:id');
+        $data = [
+            ':id' => $this->id,
+            ':name' => $this->name,
+            ':type_id' => $this->type_id,
+            ':price' => $this->price
+        ];
+        return $statement->execute($data);
+    }
 }
