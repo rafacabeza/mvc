@@ -44,4 +44,14 @@ class ProductType
         }
         return $db;
     }
+
+    public function products()
+    {
+        //lo mismo que en Product::type, pero con fetchAll
+        //devolverá un array de objetos "Product"
+    }
+    public function __toString()
+    {
+        return "$this->id: $this->name";
+    }
 }

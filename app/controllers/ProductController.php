@@ -99,4 +99,12 @@ class ProductController
         //reenviar al show o al index
         header('Location: /product/show/' . $product->id);
     }
+    public function favorito($arguments)
+    {
+        $id = $arguments[0];
+        $product = Product::find($id);
+        $_SESSION['favorito'] = serialize($product);
+        
+        header('Location:/product/index');
+    }
 }

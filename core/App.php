@@ -5,6 +5,7 @@ class App
 {
     public function __construct()
     {
+        // unset($_SESSION['favorito']);
         session_start();
         // echo "construyo App<br>";
 
