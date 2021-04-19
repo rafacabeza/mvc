@@ -54,3 +54,19 @@ Probar en el navegador mvc.local
     - Hemos hecho create+store y edit+update de Product
     - Hacer en casa lo mismo con ProductType
     - Recomiendo hacer una o más tablas propias para practicar.
+
+
+- Repaso 05:
+    - Delete
+    - Sesión
+    - Relación entre tablas
+
+    //descargar código de Rafa en "mi" proyecto
+    git remote add rafa "ruta"
+    git fetch rafa
+    git checkout --track rafa/repasoXX
+
+    //usar sólo el código de Rafa
+    git clone "ruta"
+    git fetch origin
+    git checkout --track origin/repasoXX
